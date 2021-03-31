@@ -3,8 +3,10 @@ const consign = require('consign')
 
 consign()
     .then('./config/middlewares.js')
+    .then('./api')
+    .then('./config/routes.js')
     .into(app)
 
 app.listen(3000, () => {
-    console.log( 'Backend follow up successfully! ')
+    console.log('Backend follow up successfully!')
 })
