@@ -1,6 +1,6 @@
 <template>
 	<div id="app">
-		<Header/>
+		<Header title="Soliver - Base de Conhecimentos"/>
 		<Menu/>
 		<Content/>
 		<Footer/>
