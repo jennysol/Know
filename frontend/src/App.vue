@@ -1,6 +1,6 @@
 <template>
 	<div id="app" :class="{'hide-menu': !isMenuVisible}">
-		<Header title="Soliver - Base de Conhecimentos" :hideToggle="false"/>
+		<Header title="Soliver - Base de Conhecimentos" :hideToggle="false" :hideUserDropdown="false"/>
 		<Menu/>
 		<Content/>
 		<Footer/>
