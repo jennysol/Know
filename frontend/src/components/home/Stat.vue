@@ -3,9 +3,9 @@
         <div class="stat-icon">
             <i :class="icon" :style="style"></i>
         </div>
-        <div class="stat info">
-            <span class="state-title">{{ title }}</span>
-            <span class="state-value">{{ value }}</span>
+        <div class="stat-info">
+            <span class="stat-title">{{ title }}</span>
+            <span class="stat-value">{{ value }}</span>
         </div>
     </div>
 </template>
