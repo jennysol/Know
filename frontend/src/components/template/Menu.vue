@@ -35,8 +35,8 @@ export default {
     },
     onNodeSelect(node) {
       this.$router.push({
-          name: 'articlesByCategory',
-          params: { id: node.id }
+        name: 'articlesByCategory',
+        params: { id: node.id }
       })
 
       if(this.$mq === 'xs' || this.$mq === 'sm') {

@@ -39,11 +39,22 @@ export default {
     getArticles() {
       const url = `${baseApiUrl}/categories/${this.category.id}/articles?page=${this.page}`
       axios(url).then(res => {
-          this.articles = this.articles.concat(res.data) //Add to request
-          this.page++
+        this.articles = this.articles.concat(res.data) //Add to request
+        this.page++
 
-          if(res.data.length === 0) this.loadMore = false
+        if(res.data.length === 0) this.loadMore = false
       })
+    }
+  },
+  watch: {
+    $route(to) {
+      this.category.id = to.params.id
+      this.articles = []
+      this.page = 1
+      this.loadMore = true
+
+      this.getCategory()
+      this.getArticles()
     }
   },
   mounted() {
