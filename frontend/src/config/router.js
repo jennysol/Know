@@ -31,8 +31,7 @@ const routes = [{
     name: 'auth',
     path: '/auth',
     component: Auth
-}
-,]
+}]
 
 export default new VueRouter({
     mode: 'history',

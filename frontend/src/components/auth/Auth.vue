@@ -1,29 +1,29 @@
 <template>
-    <div class="auth-content">
-      <div class="auth-modal">
-        <img src="@/assets/logo.png" width="200"  alt="Logo">
-        <hr>
-        <div class="auth-title">{{ showSignup ? 'Cadastro' : 'Login'}}</div>
+  <div class="auth-content">
+    <div class="auth-modal">
+      <img src="@/assets/logo.png" width="200"  alt="Logo">
+      <hr>
+      <div class="auth-title">{{ showSignup ? 'Cadastro' : 'Login'}}</div>
 
-        <input v-if="showSignup" v-model="user.name" type="text" name="name" placeholder="Nome">
-        <input v-model="user.email" type="email" name="email" placeholder="E-mail">
-        <input v-model="user.password" type="password" name="password" placeholder="Senha">
-        <input 
-          v-if="showSignup" 
-          v-model="user.confirmPassword"  
-          type="password" 
-          name="confirmPassword" 
-          placeholder="Confirme a Senha">
-        
-        <button v-if="showSignup" @click="signup">Registrar</button>
-        <button v-else @click="signin">Entrar</button>
+      <input v-if="showSignup" v-model="user.name" type="text" name="name" placeholder="Nome">
+      <input v-model="user.email" type="email" name="email" placeholder="E-mail">
+      <input v-model="user.password" type="password" name="password" placeholder="Senha">
+      <input 
+        v-if="showSignup" 
+        v-model="user.confirmPassword"  
+        type="password" 
+        name="confirmPassword" 
+        placeholder="Confirme a Senha">
+      
+      <button v-if="showSignup" @click="signup">Registrar</button>
+      <button v-else @click="signin">Entrar</button>
 
-        <a href="" @click.prevent="showSignup = !showSignup">
-          <span v-if="showSignup">Já tem cadastro ? Acesse o Login!</span>
-          <span v-else>Não tem cadastro ? Registre-se aqui!</span>
-        </a>
-      </div>
+      <a href @click.prevent="showSignup = !showSignup">
+        <span v-if="showSignup">Já tem cadastro ? Acesse o Login!</span>
+        <span v-else>Não tem cadastro ? Registre-se aqui!</span>
+      </a>
     </div>
+  </div>
 </template>
 
 <script>
@@ -34,8 +34,8 @@ export default {
   name: 'Auth',
   data: function() {
     return {
-        showSignup: false,
-        user: {}
+      showSignup: false,
+      user: {}
     }
   },
   methods: {
@@ -44,7 +44,7 @@ export default {
         .then(res => {
           this.$store.commit('setUser', res.data)
           localStorage.setItem(userKey, JSON.stringify(res.data))
-          this.$router.path({ path: '/' })
+          this.$router.path({ name: 'home' })
         })
         .catch(showError)
     },
@@ -58,7 +58,6 @@ export default {
         .catch(showError) 
     }
   }
-
 }
 </script>
 
