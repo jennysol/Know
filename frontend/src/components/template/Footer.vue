@@ -1,6 +1,6 @@
 <template>
     <footer class="footer"> 
-        <span>Logo <strong>Soliver</strong>TM 2021</span>
+        <span><strong>Know</strong>2021</span>
     </footer>
 </template>
 

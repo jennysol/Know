@@ -57,7 +57,7 @@
     <hr>
       <b-table hover striped :items="articles" :fields="fields">
         <template slot="actions" slot-scope="data">
-          <b-button variant="warning" @click="loadArticle(data.item)" class="mr-2">
+          <b-button @click="loadArticle(data.item)" class="mr-2">
             <i class="fa fa-pencil"></i>
           </b-button>
           <b-button variant="danger" @click="loadArticle(data.item, 'remove')">
