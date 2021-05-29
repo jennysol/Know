@@ -1,13 +1,12 @@
 <template>
   <div class="auth-content">
     <div class="auth-modal">
-      <img src="@/assets/logo.png" width="200"  alt="Logo">
-      <hr>
+      <img src="@/assets/logo.png"  alt="Logo">
       <div class="auth-title">{{ showSignup ? 'Cadastro' : 'Login'}}</div>
 
-      <input v-if="showSignup" v-model="user.name" type="text" name="name" placeholder="Nome">
-      <input v-model="user.email" type="email" name="email" placeholder="E-mail">
-      <input v-model="user.password" type="password" name="password" placeholder="Senha">
+      <input class="mb-4" v-if="showSignup" v-model="user.name" type="text" name="name" placeholder="Nome">
+      <input class="mb-4" v-model="user.email" type="email" name="email" placeholder="E-mail">
+      <input class="mb-4" v-model="user.password" type="password" name="password" placeholder="Senha">
       <input 
         v-if="showSignup" 
         v-model="user.confirmPassword"  
@@ -15,12 +14,12 @@
         name="confirmPassword" 
         placeholder="Confirme a Senha">
       
-      <button v-if="showSignup" @click="signup">Registrar</button>
-      <button v-else @click="signin">Entrar</button>
+      <button class="mt-3" v-if="showSignup" @click="signup">Registrar</button>
+      <button class="mt-3" v-else @click="signin">Entrar</button>
 
-      <a href @click.prevent="showSignup = !showSignup">
-        <span v-if="showSignup">Já tem cadastro ? Acesse o Login!</span>
-        <span v-else>Não tem cadastro ? Registre-se aqui!</span>
+      <a style="text-decoration: none" href @click.prevent="showSignup = !showSignup">
+        <span style="color: #A3A3A3;" v-if="showSignup">Já tem cadastro ? Acesse o Login!</span>
+        <span style="color: #A3A3A3;" v-else>Não tem cadastro ? Registre-se aqui!</span>
       </a>
     </div>
   </div>
@@ -74,6 +73,7 @@ export default {
   width: 350px;
   padding: 35px;
   box-shadow: 0 1px 5px rgb(0,0,0, 0.15);
+  border-radius: 5px;
 
   display: flex;
   flex-direction: column;
@@ -82,13 +82,15 @@ export default {
 
 .auth-title {
   font-size: 1.2rem;
-  font-weight: 100;
+  font-weight: 500;
+  color: #0f80aa;
   margin-top: 10px;
   margin-bottom: 15px;
 }
 
 .auth-modal input {
   border: 1px solid #BBB;
+  border-radius: 5px;
   width: 100%;
   margin-bottom: 15px;
   padding: 3px 8px;
@@ -97,8 +99,11 @@ export default {
 
 .auth-modal button {
   align-self: flex-end;
-  background: #2460ae;
+  background: #16679a;
   padding: 5px 15px;
+  color: white;
+  border-radius: 4px;
+  border: none;
 }
 
 .auth-modal a {
