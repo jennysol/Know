@@ -23,6 +23,7 @@
               v-model="user.email" 
               :readonly="mode === 'remove'"
               required 
+              style="color: white;"
               placeholder="Informe o Email do Usuário">
             </b-form-input>
           </b-form-group>
@@ -34,6 +35,7 @@
          id="user-admin" 
          v-model="user.admin" 
          class="mt-3 mb-3"
+         style="color: white;"
       >
         Administrador
       </b-form-checkbox>
